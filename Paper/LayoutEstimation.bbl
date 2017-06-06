@@ -1,0 +1,132 @@
+\begin{thebibliography}{10}
+
+\bibitem{hedau2009recovering}
+Varsha Hedau, Derek Hoiem, and David Forsyth,
+\newblock ``Recovering the spatial layout of cluttered rooms,''
+\newblock in {\em 2009 IEEE 12th international conference on computer vision}.
+  IEEE, 2009, pp. 1849--1856.
+
+\bibitem{wang2013discriminative}
+Huayan Wang, Stephen Gould, and Daphne Roller,
+\newblock ``Discriminative learning with latent variables for cluttered indoor
+  scene understanding,''
+\newblock {\em Communications of the ACM}, vol. 56, no. 4, pp. 92--99, 2013.
+
+\bibitem{schwing2012efficient}
+Alexander~G Schwing, Tamir Hazan, Marc Pollefeys, and Raquel Urtasun,
+\newblock ``Efficient structured prediction for 3d indoor scene
+  understanding,''
+\newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2012 IEEE
+  Conference on}. IEEE, 2012, pp. 2815--2822.
+
+\bibitem{schwing2013box}
+Alexander~G Schwing, Sanja Fidler, Marc Pollefeys, and Raquel Urtasun,
+\newblock ``Box in the box: Joint 3d layout and object reasoning from single
+  images,''
+\newblock in {\em Proceedings of the IEEE International Conference on Computer
+  Vision}, 2013, pp. 353--360.
+
+\bibitem{lee2009geometric}
+David~C Lee, Martial Hebert, and Takeo Kanade,
+\newblock ``Geometric reasoning for single image structure recovery,''
+\newblock in {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
+  IEEE Conference on}. IEEE, 2009, pp. 2136--2143.
+
+\bibitem{ramalingam2013manhattan}
+Srikumar Ramalingam, Jaishanker~K Pillai, Arpit Jain, and Yuichi Taguchi,
+\newblock ``Manhattan junction catalogue for spatial reasoning of indoor
+  scenes,''
+\newblock in {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, 2013, pp. 3065--3072.
+
+\bibitem{geiger2015joint}
+Andreas Geiger and Chaohui Wang,
+\newblock ``Joint 3d object and layout inference from a single rgb-d image,''
+\newblock in {\em German Conference on Pattern Recognition}. Springer, 2015,
+  pp. 183--195.
+
+\bibitem{ren2016three}
+Zhile Ren and Erik~B Sudderth,
+\newblock ``Three-dimensional object detection and layout prediction using
+  clouds of oriented gradients,''
+\newblock in {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, 2016, pp. 1525--1533.
+
+\bibitem{guo2015predicting}
+Ruiqi Guo, Chuhang Zou, and Derek Hoiem,
+\newblock ``Predicting complete 3d models of indoor scenes,''
+\newblock {\em arXiv preprint arXiv:1504.02437}, 2015.
+
+\bibitem{long2015fully}
+Jonathan Long, Evan Shelhamer, and Trevor Darrell,
+\newblock ``Fully convolutional networks for semantic segmentation,''
+\newblock in {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, 2015, pp. 3431--3440.
+
+\bibitem{chen2016deeplab}
+Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and Alan~L
+  Yuille,
+\newblock ``Deeplab: Semantic image segmentation with deep convolutional nets,
+  atrous convolution, and fully connected crfs,''
+\newblock {\em arXiv preprint arXiv:1606.00915}, 2016.
+
+\bibitem{girshick2015fast}
+Ross Girshick,
+\newblock ``Fast r-cnn,''
+\newblock in {\em Proceedings of the IEEE International Conference on Computer
+  Vision}, 2015, pp. 1440--1448.
+
+\bibitem{ren2015faster}
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun,
+\newblock ``Faster r-cnn: Towards real-time object detection with region
+  proposal networks,''
+\newblock in {\em Advances in neural information processing systems}, 2015, pp.
+  91--99.
+
+\bibitem{gupta2015indoor}
+Saurabh Gupta, Pablo Arbel{\'a}ez, Ross Girshick, and Jitendra Malik,
+\newblock ``Indoor scene understanding with rgb-d images: Bottom-up
+  segmentation, object detection and semantic segmentation,''
+\newblock {\em International Journal of Computer Vision}, vol. 112, no. 2, pp.
+  133--149, 2015.
+
+\bibitem{badrinarayanan2017segnet}
+Vijay Badrinarayanan, Alex Kendall, and Roberto Cipolla,
+\newblock ``Segnet: A deep convolutional encoder-decoder architecture for scene
+  segmentation,''
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  2017.
+
+\bibitem{mallya2015learning}
+Arun Mallya and Svetlana Lazebnik,
+\newblock ``Learning informative edge maps for indoor scene layout
+  prediction,''
+\newblock in {\em Proceedings of the IEEE International Conference on Computer
+  Vision}, 2015, pp. 936--944.
+
+\bibitem{dasgupta2016delay}
+Saumitro Dasgupta, Kuan Fang, Kevin Chen, and Silvio Savarese,
+\newblock ``Delay: Robust spatial layout estimation for cluttered indoor
+  scenes,''
+\newblock in {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, 2016, pp. 616--624.
+
+\bibitem{ren2016coarse}
+Yuzhuo Ren, Chen Chen, Shangwen Li, and C-C~Jay Kuo,
+\newblock ``A coarse-to-fine indoor layout estimation (cfile) method,''
+\newblock {\em arXiv preprint arXiv:1607.00598}, 2016.
+
+\bibitem{zhang2016learning}
+Weidong Zhang, Wei Zhang, Kan Liu, and Jason Gu,
+\newblock ``Learning to predict high-quality edge maps for room layout
+  estimation,''
+\newblock {\em IEEE Transactions on Multimedia}, 2016.
+
+\bibitem{eigen2015predicting}
+David Eigen and Rob Fergus,
+\newblock ``Predicting depth, surface normals and semantic labels with a common
+  multi-scale convolutional architecture,''
+\newblock in {\em Proceedings of the IEEE International Conference on Computer
+  Vision}, 2015, pp. 2650--2658.
+
+\end{thebibliography}

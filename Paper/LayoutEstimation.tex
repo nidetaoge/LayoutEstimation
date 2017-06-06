@@ -1,0 +1,70 @@
+% Template for ICIP-2015 paper; to be used with:
+%          spconf.sty  - ICASSP/ICIP LaTeX style file, and
+%          IEEEbib.bst - IEEE bibliography style file.
+% --------------------------------------------------------------------------
+\documentclass{article}
+\usepackage{spconf,amsmath,graphicx}
+
+% Example definitions.
+% --------------------
+\def\x{{\mathbf x}}
+\def\L{{\cal L}}
+
+% Title.
+% ------
+\title{Geometric Based Convolutional Neural Networks for Effective\\
+ Indoor Scene Layout Estimation}
+%
+% Single address.
+% ---------------
+\name{Juntao Feng, Xuejin Chen\thanks{Thanks to XYZ agency for funding.}}
+\address{University of Science and Technology of China, Hefei Anhui, China.}
+%
+% For example:
+% ------------
+%\address{School\\
+%	Department\\
+%	Address}
+%
+% Two addresses (uncomment and modify for two-address case).
+% ----------------------------------------------------------
+%\twoauthors
+%  {A. Author-one, B. Author-two\sthanks{Thanks to XYZ agency for funding.}}
+%	{School A-B\\
+%	Department A-B\\
+%	Address A-B}
+%  {C. Author-three, D. Author-four\sthanks{The fourth author performed the work
+%	while at ...}}
+%	{School C-D\\
+%	Department C-D\\
+%	Address C-D}
+%
+\begin{document}
+%\ninept
+%
+\maketitle
+%
+\begin{abstract}
+Layout estimation from a single RGB image is a fundamental and indispensable problem for indoor scene understanding, which models the inner space as a 3D cuboid, including floor, ceiling and walls and their boundaries. However, it is significantly challenging to extract layout structure with large clutter and occlusions.
+In this paper, we propose a geometric based networks for a single RGB image which encodes depth and normal information from image itself. We have demonstrated that using geometric information jointly works better than using only RGB images for indoor scene layout estimation with fully convolutional neural networks(FCNN). Then an optimization framework takes full advantages of spacial labelling results and layout boundary relations from networks to generate final layout estimates. The proposed method has proven to achieve competitive accuracy of layout estimation on two commonly used benchmark datasets.
+\end{abstract}
+%
+\begin{keywords}
+   Scene understanding, layout estimation, geometric embedding.
+\end{keywords}
+%
+
+
+\input{paper/INTRODUCTION}
+%\input{paper/RELATEDWORK}
+\input{paper/METHODOLOGY}
+\input{paper/RESULTS}
+\input{paper/CONCLUSIONS}
+
+\section{REFERENCES}
+\label{sec:ref}
+
+\bibliographystyle{IEEEbib}
+\bibliography{refs}
+
+\end{document}
