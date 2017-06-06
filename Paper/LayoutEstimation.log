@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.5.9)  6 JUN 2017 22:35
 entering extended mode
 **LayoutEstimation.tex
@@ -272,3 +273,279 @@ Here is how much of TeX's memory you used:
  27i,10n,20p,3031b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on LayoutEstimation.pdf (4 pages).
+=======
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.5.9)  6 JUN 2017 22:35
+entering extended mode
+**LayoutEstimation.tex
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\LayoutEstimation.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+(D:\CTEX\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(D:\CTEX\MiKTeX\tex\latex\base\size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\spconf.sty)
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(D:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(D:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+
+(D:\CTEX\MiKTeX\tex\xelatex\xetex-def\xetex.def
+File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\LayoutEstimation.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 42.
+
+(D:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+Requested font "ptmr7t" at 10.0pt
+ -> ptmr7t
+Requested font "ptmr7t" at 12.0pt
+ -> ptmr7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+Requested font "ptmb7t" at 12.0pt
+ -> ptmb7t
+Requested font "cmr12" at 12.0pt
+ -> cmr12
+Requested font "cmr8" at 8.0pt
+ -> cmr8
+Requested font "cmr6" at 6.0pt
+ -> cmr6
+Requested font "cmmi12" at 12.0pt
+ -> cmmi12
+Requested font "cmmi8" at 8.0pt
+ -> cmmi8
+Requested font "cmmi6" at 6.0pt
+ -> cmmi6
+Requested font "cmsy10" at 12.0pt
+ -> cmsy10
+Requested font "cmsy8" at 8.0pt
+ -> cmsy8
+Requested font "cmsy6" at 6.0pt
+ -> cmsy6
+Requested font "cmex10" at 12.0pt
+ -> cmex10
+Requested font "cmex8" at 8.0pt
+ -> cmex8
+Requested font "cmex7" at 6.0pt
+ -> cmex7
+Requested font "ptmri7t" at 12.0pt
+ -> ptmri7t
+Requested font "ptmr7t" at 8.0pt
+ -> ptmr7t
+Requested font "cmex7" at 5.0pt
+ -> cmex7
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+Requested font "ptmb7t" at 10.0pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 52.
+Requested font "ptmbi7t" at 10.0pt
+ -> ptmbi7t
+
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\paper/INTRODUCTION.tex
+Requested font "ptmrc7t" at 10.0pt
+ -> ptmrc7t
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+File: figure/definition.eps Graphic file (type eps)
+
+<figure/definition.eps>
+Overfull \hbox (8.2513pt too wide) in paragraph at lines 8--9
+ [][] 
+ []
+
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+File: figure/case.eps Graphic file (type eps)
+<figure/case.eps>
+Overfull \hbox (8.2513pt too wide) in paragraph at lines 19--20
+ [][] 
+ []
+
+[1
+
+
+
+]
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no ” in font ptmr7t!
+
+Underfull \vbox (badness 2150) has occurred while \output is active []
+
+)
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\paper/METHODOLOGY.tex
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 8 replaced by U+FFFD.
+File: figure/pipeline.eps Graphic file (type eps)
+
+<figure/pipeline.eps>
+Overfull \hbox (1.02385pt too wide) in paragraph at lines 8--9
+ [][] 
+ []
+
+[2]
+Invalid UTF-8 byte or sequence at line 28 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 28 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 28 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 28 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 28 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 28 replaced by U+FFFD.
+File: figure/fcn.eps Graphic file (type eps)
+ <figure/fcn.eps>
+Overfull \hbox (1.02385pt too wide) in paragraph at lines 28--29
+ [][] 
+ []
+
+Requested font "cmex7" at 7.0pt
+ -> cmex7
+
+LaTeX Warning: Reference `fig:2.model' on page 3 undefined on input line 49.
+
+
+LaTeX Warning: Reference `fig:3.example' on page 3 undefined on input line 49.
+
+) (F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\paper/RESULTS.tex)
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\paper/CONCLUSIONS.tex)
+(F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\LayoutEstimation.bbl
+Requested font "ptmri7t" at 10.0pt
+ -> ptmri7t
+ [3]
+Underfull \hbox (badness 2229) in paragraph at lines 94--99
+[]\OT1/ptm/m/n/10 Vijay Badri-narayanan, Alex K-endal-l, and Rober-to
+ []
+
+) [4] (F:\fjt\paper\ICIP\icip2015_IndoorLayout_second\LayoutEstimation.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1292 strings out of 430478
+ 14738 string characters out of 3191503
+ 72527 words of memory out of 3000000
+ 4434 multiletter control sequences out of 15000+200000
+ 12338 words of font info for 37 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 27i,10n,20p,3031b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on LayoutEstimation.pdf (4 pages).
+>>>>>>> origin/master
