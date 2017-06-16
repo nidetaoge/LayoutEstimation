@@ -1,5 +1,7 @@
-\section{METHODOLOGY}
+\section{Our Method}
 \label{sec:Meth}
+
+
 \subsection{System Overview}
 \label{subsection:overview}
 
@@ -10,21 +12,65 @@
 	\label{fig:pipeline}
 \end{figure}
 
-The pipeline is shown in Fig. \ref{fig:pipeline}. The coarse layout estmation about semantic layout surfaces for a single RGB image, are predicted by fully convolutional neural network with geometric information emmbeded, including depth and normal information. These geometric information are estimated from source RGB image by a multi-scale convolutional architecture\cite{eigen2015predicting}. This will be decribied in Sec. \ref{subsection:CNN}. Then based on optimization framwork proposed in \cite{dasgupta2016delay}, which mainly uses perspective projection constraints, we can obtain final precise layout estimation results.
+Under the Manhattan world assumption, a room layout is represented as cube having at most five walls (Left, Front, Right, Ceiling, Ground) visible in the image. 
+%
+Given an RGB image $I$ with \cxj{arbitrary?} size $w\times h$, our algorithm generates a room layout $\vb{L}$ consisting of a surface label for each pixel $L_{ij}\in $ $\{$left wall, front wall, right wall, ceiling, ground$\}$. 
+Fig. \ref{fig:pipeline} shows our algorithm pipeline. 
+%%step 1
+Different from \cite{dasgupta2016delay}, we first estimate the depth depth $D_{I}$ and normal map $N_{I}$ from the input color image to generate \emph{geometric hints} using a multi-scale convolutional architecture~\cite{eigen2015predicting}, as described in Sec.~\ref{sec:depth_normal}.
+%step 2
+Integrating the original RGB image, the estimated depth and the normal map, a fully convolutional network is used to predict five surface maps, each of which describes the belief for each specific layout surface. Details will be described in Sec.~\ref{sec:surfacelabel}.
+%step 3: optimization
+To generate more clear and straight boundaries in the final layout, an optimization step is adopted to \cxj{what does this optimzation do?}, as described in Sec.~\ref{sec:optimization}.
 
-%The pipeline is shown in Fig. \ref{fig1:pipeline}. The coarse layout estmation about semantic layout surfaces for a single RGB image, are predicted by fully convolutional neural network with geometric information emmbeded, including depth and normal information. These geometric information are estimated from source RGB image by a multi-scale convolutional architecture\cite{eigen2015predicting}. This will be decribied in Sec. \ref{subsection:CNN}. Then based on optimization framwork proposed in \cite{dasgupta2016delay}, which mainly uses perspective projection constraints, we modify score function by adding edge shape restriction. It is mainly for the sake of consistency between layout candidate generated during optimization procedure and learned layout edge map trained from network. We call this belief edge map restriction, shown in Fig. \ref{fig1:pipeline}, which we will describe in Sec. \ref{subsection:optimization} in detail.
+
+\comments{
+The coarse layout estimation about semantic layout surfaces for a single RGB image, are predicted by fully convolutional neural network with geometric information emmbeded, including depth and normal information. These geometric information are estimated from source RGB image by a multi-scale convolutional architecture\cite{eigen2015predicting}. This will be decribied in Sec. \ref{subsection:CNN}. Then based on optimization framwork proposed in \cite{dasgupta2016delay}, which mainly uses perspective projection constraints, we can obtain final precise layout estimation results.
+%
+}
+\cxj{Figure 3 is very similar with \cite{dasgupta2016delay}..}
+ 
 
 
+\subsection{Geometric Based CNN for Coarse Layout Estimation}
+\label{sec:depth_normal}
 
-\subsection{Geometric Based CNN for Coarse Layout Estmation}
-\label{subsection:CNN}
+We use the multi-scale convolutional network proposed in \cite{eigen2015predicting} to estimate the depth and normal map from a single RGB image. 
+\cxj{Do we retrain the model or directly use their trained model?}
+%
+\cxj{More analysis on the results of depth map and normal map.}
 
-\subsection{Geometric Information}
-In previous work, \cite{dasgupta2016delay} \cite{ren2016coarse} achieved to use fully convolutional neural network(FCNN) or multi-task fully convolutional neural network(MFCNN) to predict coarse semantic layout surfaces and layout edges. However, due to much clutter, complex textures and illumination variations existed, semantic surfaces like walls are visually seperated in to pieces, making whole srufaces difficult to aggregate together. Fig. \ref{fig:fcn} shows layout estimation results using FCNN architecture for prediction. Under the comparison between the predicted results and the ground truth, we can see that due to the environmental effect of indoor scenes, layout results estimated from FCNN are not reliable. When there exits clutter right on the boundaries, such critical clues are partially or entirely excluded, and thus we can not tell location of each plane precisely. Moreover, an entire plane may be predicted separately into pieces due to clutter lay in the plane.
 
+\mdf{Though the predicted depth and normal are not accurate}, they provide valuable 3D information for high-level structure estimation.
+..can serve as clues tending to merge big planes together, with interference factors like clutter, textures and illumination eliminated to varying degrees. 
+%
+These mid-level geometric information can be used to adapt and improve performance for layout estimation compared to using RGB only. 
+%
+Since we restrict the input to single RGB image for the most general case, we 
+\cxj{...}
+
+ 
+
+
+\subsection{Surface Label Prediction using MFCN}
+\label{sec:surfacelabel}
+%
+In previous work, \cite{dasgupta2016delay,ren2016coarse} achieved to use fully convolutional neural network(FCNN) or multi-task fully convolutional neural network~(MFCNN) to predict coarse semantic layout surfaces and layout edges. 
+%
+However, due to much clutter, complex textures and illumination variations existed, semantic surfaces like walls are visually separated in to pieces, making whole surfaces difficult to aggregate together. 
+%
+Fig. \ref{fig:fcn} shows layout estimation results using FCNN architecture for prediction. Under the comparison between the predicted results and the ground truth, we can see that due to the environmental effect of indoor scenes, layout results estimated from FCNN are not reliable. When there exits clutter right on the boundaries, such critical clues are partially or entirely excluded, and thus we can not tell location of each plane precisely. 
+Moreover, an entire plane may be predicted separately into pieces due to clutter lay in the plane.
+
+\textbf{Network Architecture}
+\cxj{Explain the network architecture.}
+
+
+\textbf{Training}
+\cxj{How do you train this network with additional input? Any option to change the network? Do you modified the network parameters? say number of neurons or layers?}
 
 \begin{figure}[!htq]
-	\centering
+	\centering 
 	\textsc{\includegraphics[width=3.4in]{figure/fcn.eps}}
 	\caption{Layout estimation results using FCNN architecture for prediction in \cite{dasgupta2016delay} \cite{ren2016coarse}.}
 	\label{fig:fcn}
@@ -41,9 +87,11 @@ Meanwhile, geometric information such as normals and depth, can serve as clues t
 
 \subsection{Modified Optimization}
 \label{subsection:optimization}
-We adopt a popular model that several researchers\cite{hedau2009recovering}\cite{dasgupta2016delay}\cite{ren2016coarse} have been used to parameterize indoor layout based on "Manhattan World" assumption. Indoor scene layout can be modeled as 
+We adopt a popular model that several  researchers~\cite{hedau2009recovering,dasgupta2016delay,ren2016coarse} have been used to parameterize indoor layout based on the Manhattan world assumption. 
+Indoor scene layout can be modeled as 
+
 \begin{equation}
-	\label{1.Layout}
+	\label{eq:Layout}
 	L = (l1, l2, l3, l4, v)
 \end{equation}
 where $l_{i}$ stands for $i^{th}$ vanishing line and $v$ stands for the specific vanishing point. The whole scene is equivalent to be labeled to five semantic surfaces, coresponding to (front, left, right, ceiling, ground), as described in Fig. \ref{fig:2.model}. Based ob Eq. (\ref{1.Layout}), each surface can be reconstructed with vanishing lines, extension lines between vanishing point and Intersection point, and image boundaries. Due to the camera pose, not five surfaces are always visible, and such layout can still be modeled by Eq. (\ref{1.Layout}). Different examples are given in Fig. \ref{fig:3.example}.

@@ -1,4 +1,67 @@
 \section{RELATEDWORK}
 \label{sec:Rel}
 
+Layout estimation of interior scenes has been drawn substantial attention in computer vision, especially in recent several decades. 
+%
+According to the methodologies used to recover the layout or structure, we mainly discuss two categories of layout estimation methods: geometric reasoning based on geometric constraints like vanishing points, and neural network-based methods in recent five years. 
 
+%Geometric constraints 
+%%%%%%%%%%%%%%%%%%%%%% Single RGB image %%%%%%%%%%%%%%%%%%%%%%%
+%
+Most of existing approaches recover the scene structure from a single image under the Manhattan world assumption, under which most objects are aligned with three dominant orthogonal directions. 
+%
+Under this assumption, a three-step pipeline is widely used: vanishing points are estimated from detected line segments, layout hypotheses are created, and then each hypothesis is evaluated according various evidences in the image to find the best one. 
+%
+\cxj{list each method..}
+%
+More detailed building models are created from line segments in \cite{lee2009geometric} where they consider corner types, edge orientations, and geometric relationships in hypothesis evaluation. 
+%drawbacks 
+However, these methods usually spend several minutes on the hypothesis evaluation while there are huge number of hypotheses in a cluttered scene. 
+
+%%%%%%%%%%%%%%%%%% BOx in Box %%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+Besides of recovering the main wall-floor structure, more geometric inference of objects in the scene are added to generate more accurate estimation in cluttered scenes. 
+\cite{hedau2009recovering} reply on cuboid representations to .., while \cite{geiger2015joint} employs more precise 3D models to represent objects, taking the advantage of the depth information. 
+%
+
+
+%
+First, only use vanishing lines to generate hypotheses.
+Then, add surface orientation constraints. 
+Finally, add analysis on the clutter objects or occluding objects in the scene.
+
+
+%%%%%%%%%%% RGBD image analysis %%%%%%%%%%%%%%%%%%%%%%%%%55
+With the development of depth camera, a large number of methods for structure recovery from RGBD images appeared. 
+%
+\cite{geiger2015joint} jointly infers 3D objects and the scene layout from a single RGBD image via a high-order CRF model.  
+%
+A novel representation called Manhattan voxel is proposed in \cite{ren2016three} to capture more detailed 3D room layout. 
+By employing a cascade of classifiers, the contextual relationships among object categories and scene layout are considered to improve the accuracy of both object categorization and layout estimation. 
+% a cloud of oriented gradient descriptor to model perspective project affects for object categorization. 
+However, more complicated models brings higher time costs varying from 10 to 30 minutes to analyze a single RGBD image. 
+
+
+%Deep learning methods 
+Deep learning methods and convolution neural network(CNN) have achieved impressive progresses in various computer vision tasks, such as semantic segmentation \cite{long2015fully,chen2016deeplab}, object detection \cite{girshick2015fast,ren2015faster}, scene understanding \cite{gupta2015indoor,badrinarayanan2017segnet}, and so on.
+%
+Towards the layout estimation problem, Mallya et al.\cite{mallya2015learning} presented a fully convolutional networks (FCNs) framework for learning informative edge maps from a single image, to provide additional hints for sampling vanishing lines for layout candidates generation and ranking. 
+%
+This work firstly uses CNN to produce robust features instead of hand-crafted features for layout estimation problem. However, the layout hypothesis generation and ranking parts still play as post-processing steps, costing much time as traditional methods. 
+%
+Dasgupta et al.~\cite{dasgupta2016delay} use FCN to learn semantic surface labels including left wall, front wall, right wall, ceiling, and ground. 
+Initial layout generation and optimization were all based on surface belief labels. 
+Unfortunately, Their algorithm relies entirely on FCN's precision for semantic surface labels. 
+%In other words, if FCN resulting gains two much error, we may get totally wrong prediction.
+%
+Moreover, the optimization procedure does not utilize any restrictions based on edge information, just taking random combinations of edges instead, which is geometric inconformity compared with RGB images. 
+%
+Ren et al.~\cite{ren2016coarse} adopted a multi-task fully convolutional neural network (MFCN) to jointly predict the room edges and semantic labels. 
+Then a coarse-to-fine method was adopted which enforced several constraints such as layout contour straightness, surface smoothness and geometric constraints to generate fine layout from coarse prediction of room edges. 
+%
+They have considered geometric constraints to predict high quality estimation results. They need complex geometric computation and rules to generate useful critical lines, however, such low-level features are exactly what we avoid to extract. 
+%
+Zhang et al.\cite{zhang2016learning} used another deconvolution network which has multi-layer deconvolution and a receptive field as large as the entire image compared to FCN. As the result, they can obtain highly reliable edge maps. Then they follow the framework of layout candidates generation using vanishing line sampling with an adaptive line sample strategy for robustness and time reduction. A measurement of similarity is proposed between edge map and layout candidates for ranking. 
+Unexpectedly, their results are less precise compared with \cite{dasgupta2016delay,ren2016coarse}. 
+One explanation may be that the latter two optimization strategies are more effective compared to vanish line sampling.
+%
+\cxj{in comparison, we provide .. }

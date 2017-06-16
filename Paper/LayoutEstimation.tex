@@ -4,7 +4,14 @@
 % --------------------------------------------------------------------------
 \documentclass{article}
 \usepackage{spconf,amsmath,graphicx}
+\usepackage{epstopdf}
+\usepackage{color}
 
+
+\newcommand{\cxj}[1]{\textcolor[rgb]{1.00,0.00,0.00}{(cxj: #1)}}
+\newcommand{\mdf}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\vb}[1]{\mathbf{#1}}
+\newcommand{\comments}[1]{}
 % Example definitions.
 % --------------------
 \def\x{{\mathbf x}}
@@ -56,7 +63,7 @@ In this paper, we propose a geometric based networks for a single RGB image whic
 
 
 \input{paper/INTRODUCTION}
-%\input{paper/RELATEDWORK}
+\input{paper/RELATEDWORK}
 \input{paper/METHODOLOGY}
 \input{paper/RESULTS}
 \input{paper/CONCLUSIONS}
