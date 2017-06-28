@@ -5,7 +5,7 @@
 \subsection{System Overview}
 \label{subsection:overview}
 
-\begin{figure}[!htq]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=3.4in]{figure/pipeline.eps}
 	\caption{An overview of our layout estimation algorithm pipeline. First we adopt a multi-scale CNN achitecture to predict geometric information from RGB image, including depth and normals. Then we encode abovementioned information into FCNN , which help to accurately estimate the layout. Optimization framwork based on perspective projection restriction is adopted to generate final precise layout estimates.}
@@ -14,7 +14,7 @@
 
 Under the Manhattan world assumption, a room layout is represented as cube having at most five walls (Left, Front, Right, Ceiling, Ground) visible in the image. 
 %
-Given an RGB image $I$ with \cxj{arbitrary?} size $w\times h$, our algorithm generates a room layout $\vb{L}$ consisting of a surface label for each pixel $L_{ij}\in $ $\{$left wall, front wall, right wall, ceiling, ground$\}$. 
+Given an RGB image $I$ with \cxj{arbitrary?} \drf{yes, but it will be resized to $320\times 240$ and then input into the network~\cite{eigen2015predicting}}size $w\times h$, our algorithm generates a room layout $\vb{L}$ consisting of a surface label for each pixel $L_{ij}\in $ $\{$left wall, front wall, right wall, ceiling, ground$\}$. 
 Fig. \ref{fig:pipeline} shows our algorithm pipeline. 
 %%step 1
 Different from \cite{dasgupta2016delay}, we first estimate the depth depth $D_{I}$ and normal map $N_{I}$ from the input color image to generate \emph{geometric hints} using a multi-scale convolutional architecture~\cite{eigen2015predicting}, as described in Sec.~\ref{sec:depth_normal}.
@@ -104,13 +104,16 @@ This network is named as FCN-GF (geometric fusion), whose architecture is shown 
 
 
 For both networks to predict the five surface maps, the loss function is defined as the softmax ...\cxj{check wiht Fengjuntao. thesis page 18.}
+\drf{According to fengjuntao, the loss function was written by himself but probably not standard. I check the softmaxwithloss function on the internet and i think the formulation should be written as...or ...   }
 \cxj{The output is five maps or a single map with five surface labels?}
+\drf{The output of the FCN-MC/FCN-GF is a $w\times h \times 5$ multidimensional array T, where w and h is the width and length of the input rgb image, and each of the 5 slices can be interpreted as a classification map for a specific label. \\A single map with five surface labels can be obtained by simply picking the label with the highest score for each pixel among those 5 slices. and we use this single map for step3: optimization. }
 
 
 \textbf{Training}
 \cxj{How do you train this network with additional input? Any option to change the network? Do you modified the network parameters? say number of neurons or layers?}
+\drf{For FCN-MC, depth map and normals map are merged with the rgb image as new channels and input to the FCN. }
 
-\begin{figure}[!htq]
+\begin{figure}[!ht]
 	\centering 
 	\textsc{\includegraphics[width=3.4in]{figure/fcn.eps}}
 	\caption{Layout estimation results using different architectures. Row from top to bottom: (a) the input RGB image. (b)(c)(d)Surface predictions using the FCNN architecture used in \cite{dasgupta2016delay,ren2016coarse}, our FCN-MC and FCN-GF respectively. (e) The ground truth. }
@@ -118,7 +121,9 @@ For both networks to predict the five surface maps, the loss function is defined
 \end{figure}
 
 \cxj{Result analysis for different architures. } 
+\drf{For FCN-MC, We treat the normal and the depth as homogeneous information of the rgb image and are a supplement to the rgb image. These addtitional information can serve as context constraints to improve the performance of the network.\\For FCN-GF, we treat the normal and the depth as unhomogeneous information of the rgb image and may disrupt the network parameters as they share weights with the rgb image in the following convolution layers during training. So we learn these information sepertately and fuse them in high-level layer. ie. conv5-3. (more detailed result analysis coming soon..)  }
 From Table~\ref{table:fcn-accuracy}, we can see that ...\cxj{FCN-GF is better than FCN-MC?}
+\drf{We expect that the performance of FCN-GF should be better than FCN-MC, but it turns out that FCN-MC slightly outperforms FCN-GF. Furthermore, the structrue of FCN-MC have less paramters than FCN-GF, so it's time saving and memory saving compared to FCN-MC.\\Although the result reveals FCN-MC is better, the structure of FCN-GF is still worth trying, as the depth maps used as input to the network are not standard. ie. They are encoded to 3 channels rgb images and should be decoded to gray scale image. And the batch size in training stage may be not appropriate due to hardware limitation. }
 Our method generate much more clear edges, less holes. 
 
 
