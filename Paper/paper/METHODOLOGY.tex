@@ -21,13 +21,14 @@ Different from \cite{dasgupta2016delay}, we first estimate the depth depth $D_{I
 %step 2
 Integrating the original RGB image, the estimated depth and the normal map, a fully convolutional network is used to predict five surface maps, each of which describes the belief for each specific layout surface. Details will be described in Sec.~\ref{sec:surfacelabel}.
 %step 3: optimization
-To generate more clear and straight boundaries in the final layout, an optimization step is adopted to \cxj{what does this optimzation do?}, as described in Sec.~\ref{sec:optimization}.
+To generate more clear and straight boundaries in the final layout, an optimization step is adopted to \cxj{what does this optimzation do?}\drf{The output of the FCN-MC maybe not consistent with the model that we use to parameterize the layout. For example, the boundaries are not straight, there may be multiple disjoint components per label, and it may contain spurious regions like spurious front wall. The optimization do some preprocessing first to prune the extra disjoint components and fill in the hole caused by pruning and judge whether the conbination of the plane is reasonable. Then apply an iterative refinement process to obtain L. So the ultimate goal of the optimization step is to get L which parameterize the straight boundaries of layout.}, as described in Sec.~\ref{sec:optimization}.
 
 
 \cxj{several questions here }
 
 \begin{enumerate}
-	\item \textbf{input image size}: as claimed in \cite{ren2016three}, the receptive field of VGG16 is 404x404, why do we use $321\times 321$?
+	\item \textbf{input image size}: as claimed in \cite{ren2016three}, the receptive field of VGG16 is 404x404, why do we use $321\times 321$?\ \\ \drf{Need to do experiment. As has been revealed by \cite{ren2016three}, if
+		the input image size is smaller than the receptive field size, it is padded with zeros and spatial resolution is lost in this case. So $321\times 321$ may be not appropriate, we should change it to $404\times 404$}
 
 \end{enumerate}
  
@@ -77,6 +78,7 @@ Moreover, an entire plane may be predicted separately into pieces due to clutter
 
 \textbf{Network Architecture}
 \cxj{Explain the network architecture.}
+\drf{We use the network architechure proposed by \cite{ren2016coarse} but with only one output branch while \cite{ren2016coarse} is a multi-task FCN and learn both layout and semantic surface. The architechure is based on VGG16, in Fig. We remove the first branch after fc7 and in turn we don't have to use a joint loss. The network is trained specifically for semantic surface segmentation. And we fuse the depth map and the normal map with rgb image as additional geometric information in the network to improve the performance of segmentation.   }
 
 Given the input RGB image and the estimated geometric information including depth and normal, there are several possible ways to integrate them in a network to predict the surface labels. We introduce two architectures here.
 We also resize them to $321 \time 321$ as input to the following FCN. 
