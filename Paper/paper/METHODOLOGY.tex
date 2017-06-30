@@ -78,7 +78,14 @@ Moreover, an entire plane may be predicted separately into pieces due to clutter
 
 \textbf{Network Architecture}
 \cxj{Explain the network architecture.}
-\drf{We use the network architechure proposed by \cite{ren2016coarse} but with only one output branch while \cite{ren2016coarse} is a multi-task FCN and learn both layout and semantic surface. The architechure is based on VGG16, in Fig. We remove the first branch after fc7 and in turn we don't have to use a joint loss. The network is trained specifically for semantic surface segmentation. And we fuse the depth map and the normal map with rgb image as additional geometric information in the network to improve the performance of segmentation.   }
+\drf{We use the network architechure proposed by \cite{ren2016coarse} but with only one output branch while \cite{ren2016coarse} is a multi-task FCN and learn both layout and semantic surface. The architechure is based on VGG16, in Fig.~\ref{fig:coarsetofine} We remove the first branch after fc7 and in turn we don't have to use a joint loss. The network is trained specifically for semantic surface segmentation. And we fuse the depth map and the normal map with rgb image as additional geometric information in the network to improve the performance of segmentation.   }
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{figure/coarse-to-fine-net.png}
+	\drf{\caption{The network architecture of \cite{ren2016coarse}, illustration of the FCN-VGG16 with two output branches. We only use the second branch to learn semantic surface and prune the first branch. By the way, the number of convolution layers in this figure may be wrong, i check the prototxt of VGG16 and FCN-32s, there should be three layers in the part which are pointed by black arrow. }}
+	\label{fig:coarsetofine}
+\end{figure}
 
 Given the input RGB image and the estimated geometric information including depth and normal, there are several possible ways to integrate them in a network to predict the surface labels. We introduce two architectures here.
 We also resize them to $321 \time 321$ as input to the following FCN. 
