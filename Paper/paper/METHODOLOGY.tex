@@ -161,11 +161,20 @@ Our method generate much more clear edges, less holes.
 
 \subsection{Layout Generation}
 \label{subsection:optimization}
-We adopt a popular model that several  researchers~\cite{hedau2009recovering,dasgupta2016delay,ren2016coarse} have been used to parameterize indoor layout based on the Manhattan world assumption. 
-Indoor scene layout can be modeled as 
+We adopt a popular model that several  researchers~\cite{wang2013discriminative,dasgupta2016delay,ren2016coarse} have been used to parameterize indoor layout based on the Manhattan world assumption. 
+Indoor scene layout is modeled as the projection of a cuboid which can be defined by 
 
 \begin{equation}
 	\label{eq:Layout}
 	L = (l1, l2, l3, l4, v)
 \end{equation}
-where $l_{i}$ stands for $i^{th}$ vanishing line and $v$ stands for the specific vanishing point. The whole scene is equivalent to be labeled to five semantic surfaces, coresponding to (front, left, right, ceiling, ground), as described in Fig. \ref{fig:2.model}. Based ob Eq. (\ref{1.Layout}), each surface can be reconstructed with vanishing lines, extension lines between vanishing point and Intersection point, and image boundaries. Due to the camera pose, not five surfaces are always visible, and such layout can still be modeled by Eq. (\ref{1.Layout}). Different examples are given in Fig. \ref{fig:3.example}.
+where $l_{i}$ stands for $i^{th}$ vanishing line and $v$ stands for the specific vanishing point. The whole scene is equivalent to be labeled with five semantic surfaces, coresponding to (front, left, right, ceiling, ground), as described in Fig. \ref{fig:2.model}. Based on Eq. (\ref{eq:Layout}), each surface can be reconstructed with extension lines between vanishing point $v$ and Intersection point $p_i$ among $l_{i}$. ie $ve_i$ . Due to the uncertainty of camera pose, five surfaces are not always visible. Different examples are given in Fig. \ref{fig:different-layout-type}, but such layout can still be modeled by Eq. (\ref{eq:Layout}).
+
+\textbf{Preprocessing} 
+Although we have more robust surface prediction result from our FCN-MC. Problems like spurious regions and multiple disjoint components are still a bit disturbing. To address these problems we simplify the preprocessing step in ~\cite{dasgupta2016delay} for efficiency. First, we address the multiple disjoint components (which means the connection domain for each label is not unique) by remove all but the largest connected domain for each label. Then we fill the holes created by this pruning with labels around them by using k-nn. After that we apply some simple contraints based on common sense to handle spurious regions.
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{figure/different-layout-type.png}
+	\caption{Different layout type due to variation in camera pose. \drf{I'm not sure whether this situation should be discussed, so the caption is brief.} }
+	\label{fig:different-layout-type}
+\end{figure}
