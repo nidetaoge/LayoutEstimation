@@ -47,6 +47,7 @@ The coarse layout estimation about semantic layout surfaces for a single RGB ima
 We use the multi-scale convolutional network proposed in \cite{eigen2015predicting} to estimate the depth and normal map from a single RGB image, as Figure~\ref{fig:depthandnormal} shows. 
 %
 \cxj{More analysis on the results of depth map and normal map.}
+\drf{As claimed in \cite{eigen2015predicting}, they acheive state-of-the-art performance on these two tasks. The sqr relative difference of the estimated depth maps is as low as 0.121 and the mean angle distance of the estimated normal maps is 22.2. They also evaluate their method using several other measurements for both depth and normals, see details in \cite{eigen2015predicting}. Despite the great progress they have made, the depth maps and surface maps estimated from single RGB images are still not very precise in local details. Furthermore, the The output resolution of the depth maps and normal maps are limited to half the input($147\times109$ in our case).   }
 
 
 \begin{figure}
@@ -56,7 +57,7 @@ We use the multi-scale convolutional network proposed in \cite{eigen2015predicti
 	\label{fig:depthandnormal}
 \end{figure}
 
-\mdf{Though the predicted depth and normal are not accurate}, they provide valuable 3D information for high-level structure estimation, especially in cluttered scenes.
+\mdf{Though the predicted depth and normal are not accurate}, they provide valuable 3D information for high-level structure estimation, especially in cluttered scenes.\drf{And we are more concerned about global spatial relations rather than local details.}
 %
 Normals can serve as clues tending to merge big planes together, with interference factors like clutter, textures and illumination eliminated to varying degrees. 
 %
